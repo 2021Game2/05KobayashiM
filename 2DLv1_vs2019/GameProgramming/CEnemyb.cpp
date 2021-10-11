@@ -47,7 +47,7 @@ bool CEnemyb::Collision(const CRectangle& r) {
 
 void CEnemyb::Render() {
 	if (mEnabled) {
-		CRectangle::Render(Texture, 199 - 9, 199 + 9, 119 - 9, 119 + 9);
+		CRectangle::Render(Texture, 199 - 9, 199 + 9, 119 + 9, 119 - 9);
 	}
 }
 

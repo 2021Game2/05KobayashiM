@@ -12,19 +12,19 @@ void CSceneGame::Init() {
 	//クラスのメンバ変数への代入
 //37
 	CPlayer *Player = new CPlayer();
-	Player->x = 150;
-	Player->y = 150;
+	Player->x = 0;
+	Player->y = -180;
 	Player->w = 25;
 	Player->h = 25;
 	Player->mEnabled = true;
 //37
 	int map[6][8] =
 	{
-		{ 1, 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 0, 1, 0, 0, 0, 1, 1 },
-		{ 1, 2, 0, 0, 1, 5, 0, 1 },
-		{ 1, 0, 1, 2, 0, 0, 1, 1 },
-		{ 1, 0, 0, 0, 1, 2, 0, 1 },
+		{ 2, 0, 0, 0, 3, 5, 0, 2 },
+		{ 2, 3, 0, 3, 0, 0, 0, 2 },
+		{ 2, 0, 0, 0, 0, 0, 0, 2 },
+		{ 2, 0, 0, 0, 0, 0, 0, 2 },
+		{ 2, 0, 0, 0, 0, 0, 0, 2 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 //37	MapSize = 0;	//0を代入する
@@ -43,7 +43,18 @@ void CSceneGame::Init() {
 				//37
 			}
 			else if (map[j][i] == 2) {
-				CEnemy *Enemy = new CEnemy();
+				//37
+				CMaps* Maps = new CMaps();
+				//四角形に値を設定
+				Maps->mEnabled = true;
+				Maps->x = i * 100 - 350;//-350から-340という風にすると敵が左にずれる
+				Maps->y = j * -100 + 250;//+250から+240という風にするとマップが下にずれる
+				Maps->w = 50;
+				Maps->h = 50;
+				//37
+			}
+			else if (map[j][i] == 3) {
+				CEnemy *Enemy = new CEnemy();//栗
 				Enemy->x = i * 100 - 350;//-350から-340という風にすると敵が右にずれる
 				Enemy->y = j * -100 + 250;//数字を減らすと敵が下にずれる
 				//右へ移動
@@ -65,31 +76,8 @@ void CSceneGame::Init() {
 				}
 				*/
 			}
-			else if (map[j][i] == 3) {
-				CEnemyas* Enemyas = new CEnemyas();
-				Enemyas->x = i * 100 - 350;//-350から-340という風にすると敵が右にずれる
-				Enemyas->y = j * -100 + 250;//数字を減らすと敵が下にずれる
-				//右へ移動
-				Enemyas->mFx = 0;//1が右に進む-1が左に進む 速度+1
-				Enemyas->mFy = -1;//1が上に進む-1が下に進む 速度+1
-				/*37
-				for (int k = 0; k < 10; k++) {
-					if (!Enemyas[k].mEnabled) {
-						//敵に値を設定
-						Enemyas[k].x = i * 100 - 350;
-						Enemyas[k].y = j * -100 + 250;
-						//右へ移動
-						Enemyas[k].mFx = 0;
-						Enemyas[k].mFy = 1;
-						//有効にする
-						Enemyas[k].mEnabled = true;
-						break;
-					}
-				}
-				*/
-			}
 			else if (map[j][i] == 4) {
-				CEnemys* Enemys = new CEnemys();
+				CEnemys* Enemys = new CEnemys();//ウニ
 				Enemys->x = i * 100 - 350;//-350から-340という風にすると敵が右にずれる
 				Enemys->y = j * -100 + 250;//数字を減らすと敵が下にずれる
 				//右へ移動
@@ -112,7 +100,7 @@ void CSceneGame::Init() {
 				*/
 			}
 			else if (map[j][i] == 5) {
-				CEnemyb* Enemyb = new CEnemyb();
+				CEnemyb* Enemyb = new CEnemyb();//爆弾
 				Enemyb->x = i * 100 - 350;//-350から-340という風にすると敵が右にずれる
 				Enemyb->y = j * -100 + 250;//数字を減らすと敵が下にずれる
 				//右へ移動

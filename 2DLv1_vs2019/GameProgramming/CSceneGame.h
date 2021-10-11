@@ -5,13 +5,13 @@
 #include "CRectangle.h"
 #include "CPlayer.h"
 #include "CEnemy.h"
-#include "CEnemyas.h"
 #include "CEnemys.h"
 #include "CEnemyb.h"
 #include "CText.h"
 // テクスチャクラスのインクルード
 #include "CTexture.h"
 #include "CMap.h"
+#include "CMaps.h"
 
 /*
 ゲームのシーン

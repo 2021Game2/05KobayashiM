@@ -87,7 +87,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CEnemy.cpp" />
-    <ClCompile Include="CEnemyas.cpp" />
     <ClCompile Include="CEnemyb.cpp" />
     <ClCompile Include="CEnemys.cpp" />
     <ClCompile Include="CKey.cpp" />
@@ -103,11 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CEnemy.h" />
-    <ClInclude Include="CEnemyas.h" />
     <ClInclude Include="CEnemyb.h" />
     <ClInclude Include="CEnemys.h" />
     <ClInclude Include="CKey.h" />
     <ClInclude Include="CMap.h" />
+    <ClInclude Include="CMaps.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CRectangle.h" />
     <ClInclude Include="CScene.h" />

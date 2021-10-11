@@ -19,7 +19,6 @@ public:
 		EBLOCK,			//ÉuÉçÉbÉN
 		EPLAYER,
 		EENEMY,
-		EENEMYAS,
 		EENEMYS,
 		EENEMYB,
 	};
