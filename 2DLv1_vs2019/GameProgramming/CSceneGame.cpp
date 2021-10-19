@@ -4,6 +4,7 @@
 //残り時間（30秒）
 int Time = 60 * 60;
 int Remain = 3;
+int Score = 0;
 
 void CSceneGame::Init() {
 	//シーンの設定
@@ -178,6 +179,10 @@ void CSceneGame::Update() {
 	CText::DrawChar('o', -350 + 32 * 2, 250, 16, 16);
 	CText::DrawChar('r', -350 + 32 * 3, 250, 16, 16);
 	CText::DrawChar('e', -350 + 32 * 4, 250, 16, 16);
+	CText::DrawChar('0', -350 + 32 * 7, 250, 16, 16);
+	if (Score >=0) {
+		Score++;
+	}
 
 	CText::DrawChar('P', 150, -250, 16, 16);
 	CText::DrawChar('l', 150 + 32, -250, 16, 16);

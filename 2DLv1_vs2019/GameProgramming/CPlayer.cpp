@@ -1,5 +1,6 @@
 #include "CPlayer.h"
 #include "CKey.h"
+#define ANICNT 30 //アニメーションの切り替え
 
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
@@ -7,6 +8,7 @@ extern CTexture Texture;
 CPlayer::CPlayer()
 : mFx(1.0f), mFy(0.0f)
 , FireCount(0)
+, mAniCnt(0)
 {
 	mTag = EPLAYER;
 }
@@ -33,7 +35,25 @@ void CPlayer::Update() {
 }
 
 void CPlayer::Render() {
-	CRectangle::Render(Texture, 146 - 16, 146 + 16, 146 + 16, 146 - 16);
+	mAniCnt++;
+	mAniCnt %= ANICNT;
+	if (mAniCnt < ANICNT / 2)
+	{
+		if (mFx >= 0) {
+			CRectangle::Render(Texture, 130, 162, 162, 130);
+		}
+		else {
+			CRectangle::Render(Texture, 162, 130, 162, 130);
+		}
+	}
+	else{
+		if(mFx >= 0) {
+			CRectangle::Render(Texture, 162, 194, 162, 130);
+		}
+		else {
+			CRectangle::Render(Texture, 194, 162, 162, 130);
+		}
+	}
 }
 
 //36
