@@ -118,6 +118,8 @@
     <ClInclude Include="Update.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Gkuri.jpg" />
+    <Image Include="Guni.png" />
     <Image Include="Image.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

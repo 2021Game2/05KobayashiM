@@ -1,4 +1,4 @@
-#include "CEnemys.h"
+#include "CEnemys.h"//ウニ
 #include "CTexture.h"
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;

@@ -106,5 +106,11 @@
     <Image Include="Image.png">
       <Filter>ソース ファイル</Filter>
     </Image>
+    <Image Include="Gkuri.jpg">
+      <Filter>ソース ファイル</Filter>
+    </Image>
+    <Image Include="Guni.png">
+      <Filter>ソース ファイル</Filter>
+    </Image>
   </ItemGroup>
 </Project>
