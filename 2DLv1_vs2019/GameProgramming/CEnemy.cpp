@@ -4,7 +4,7 @@
 extern CTexture Texture;
 
 //CBullet CEnemy::EBullet[20];
-
+CTexture kuri;
 CEnemy::CEnemy()
 : mFx(1.0f), mFy(0.0f), mFireCount(60)
 {
@@ -13,6 +13,9 @@ CEnemy::CEnemy()
 	mTag = EENEMY;
 	w = 25;
 	h = 25;
+	if (kuri.mId == 0) {
+		kuri.Load("Gkuri.png");
+	}
 }
 
 void CEnemy::Update() {
@@ -47,7 +50,7 @@ bool CEnemy::Collision(const CRectangle &r) {
 
 void CEnemy::Render() {
 	if (mEnabled) {
-		CRectangle::Render(Texture, 146 - 16, 146 + 16, 178 + 16, 178 - 16);
+		CRectangle::Render(kuri, 0, 640, 640, 0);
 	}
 }
 

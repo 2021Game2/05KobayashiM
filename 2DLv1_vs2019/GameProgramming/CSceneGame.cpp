@@ -21,8 +21,8 @@ void CSceneGame::Init() {
 //37
 	int map[6][8] =
 	{
-		{ 2, 0, 0, 0, 3, 5, 0, 2 },
-		{ 2, 3, 0, 3, 0, 0, 0, 2 },
+		{ 2, 0, 4, 0, 3, 5, 0, 2 },
+		{ 2, 3, 0, 4, 0, 0, 0, 2 },
 		{ 2, 0, 0, 0, 0, 0, 0, 2 },
 		{ 2, 0, 0, 0, 0, 0, 0, 2 },
 		{ 2, 0, 0, 0, 0, 0, 0, 2 },
@@ -174,22 +174,12 @@ void CSceneGame::Update() {
 		VectorRect[i]->Render();
 	}
 
-	CText::DrawChar('S', -350, 250, 16, 16);
-	CText::DrawChar('c', -350 + 32, 250, 16, 16);
-	CText::DrawChar('o', -350 + 32 * 2, 250, 16, 16);
-	CText::DrawChar('r', -350 + 32 * 3, 250, 16, 16);
-	CText::DrawChar('e', -350 + 32 * 4, 250, 16, 16);
-	CText::DrawChar('0', -350 + 32 * 7, 250, 16, 16);
+	CText::DrawString("Score", -350, 250, 16, 16);
 	if (Score >=0) {
-		Score++;
+		Score=Score+100;
 	}
-
-	CText::DrawChar('P', 150, -250, 16, 16);
-	CText::DrawChar('l', 150 + 32, -250, 16, 16);
-	CText::DrawChar('a', 150 + 32 * 2, -250, 16, 16);
-	CText::DrawChar('y', 150 + 32 * 3, -250, 16, 16);
-	CText::DrawChar('e', 150 + 32 * 4, -250, 16, 16);
-	CText::DrawChar('r', 150 + 32 * 5, -250, 16, 16);
+	
+	CText::DrawString("50", -160, 250, 16, 16);
 
 	//•¶Žš—ñ‚Ì•`‰æ
 	CText::DrawString("Time", 150, 250, 16, 16);
@@ -200,9 +190,6 @@ void CSceneGame::Update() {
 	char buf[10];//9•¶Žš‚Ü‚ÅOK
 	sprintf(buf, "%d", Time / 60);
 	CText::DrawString(buf, 300, 250, 16, 16);
-
-	sprintf(buf, "%d", Remain);
-	CText::DrawString(buf, 150 + 32 * 7, -250, 16, 16);
 
 }
 

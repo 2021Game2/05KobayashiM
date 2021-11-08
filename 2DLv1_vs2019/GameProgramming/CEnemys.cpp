@@ -1,10 +1,11 @@
 #include "CEnemys.h"//ウニ
 #include "CTexture.h"
+
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
 
 //CBullet CEnemy::EBullet[20];
-
+CTexture uni;
 CEnemys::CEnemys()
 	: mFx(1.0f), mFy(0.0f), mFireCount(60)
 {
@@ -13,6 +14,9 @@ CEnemys::CEnemys()
 	mTag = EENEMYS;
 	w = 25;
 	h = 25;
+	if (uni.mId == 0) {
+		uni.Load("Guni.png");
+	}
 }
 
 void CEnemys::Update() {
@@ -47,7 +51,7 @@ bool CEnemys::Collision(const CRectangle& r) {
 
 void CEnemys::Render() {
 	if (mEnabled) {
-		CRectangle::Render(Texture, 146 - 16, 146 + 16, 178 + 16, 178 - 16);
+		CRectangle::Render(uni, 0, 3840, 3244, 0);
 	}
 }
 
