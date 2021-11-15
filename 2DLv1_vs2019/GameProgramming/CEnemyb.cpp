@@ -2,7 +2,7 @@
 #include "CTexture.h"
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
-
+extern int Time;
 //CBullet CEnemy::EBullet[20];
 
 CEnemyb::CEnemyb()
@@ -38,6 +38,7 @@ bool CEnemyb::Collision(const CRectangle& r) {
 		case EPLAYER:
 			//プレイヤーに当たると、無効にする
 			mEnabled = false;
+			Time -= 5 / 60;
 			break;
 		}
 		return true;

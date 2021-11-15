@@ -174,12 +174,7 @@ void CSceneGame::Update() {
 		VectorRect[i]->Render();
 	}
 
-	CText::DrawString("Score", -350, 250, 16, 16);
-	if (Score >=0) {
-		Score=Score+100;
-	}
-	
-	CText::DrawString("50", -160, 250, 16, 16);
+	CText::DrawString("Score", -350, 250, 16, 16);	
 
 	//•¶Žš—ñ‚Ì•`‰æ
 	CText::DrawString("Time", 150, 250, 16, 16);
@@ -191,6 +186,8 @@ void CSceneGame::Update() {
 	sprintf(buf, "%d", Time / 60);
 	CText::DrawString(buf, 300, 250, 16, 16);
 
+	sprintf(buf, "%d", Score);
+	CText::DrawString(buf, -160, 250, 16, 16);
 }
 
 

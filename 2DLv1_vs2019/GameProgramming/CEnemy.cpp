@@ -2,7 +2,7 @@
 #include "CTexture.h"
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
-
+extern int Score;
 //CBullet CEnemy::EBullet[20];
 CTexture kuri;
 CEnemy::CEnemy()
@@ -41,6 +41,7 @@ bool CEnemy::Collision(const CRectangle &r) {
 		case EPLAYER:
 			//プレイヤーに当たると、無効にする
 			mEnabled = false;
+			Score += 100;
 			break;
 		}
 		return true;
