@@ -38,7 +38,6 @@ bool CEnemyb::Collision(const CRectangle& r) {
 		case EPLAYER:
 			//プレイヤーに当たると、無効にする
 			mEnabled = false;
-			Time -= 5 / 60;
 			break;
 		}
 		return true;

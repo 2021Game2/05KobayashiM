@@ -9,12 +9,17 @@ CPlayer::CPlayer()
 : mFx(1.0f), mFy(0.0f)
 , FireCount(0)
 , mAniCnt(0)
+,stop(0)
 {
 	mTag = EPLAYER;
 }
 
 void CPlayer::Update() {
-
+	if (stop > 0)
+	{
+		stop--;
+		return;
+	}
 	//staticメソッドはどこからでも呼べる
 	if (CKey::Push('A')) {
 		x -= 3;
@@ -35,6 +40,10 @@ void CPlayer::Update() {
 }
 
 void CPlayer::Render() {
+	if (stop > 0)
+	{
+		return;
+	}
 	mAniCnt++;
 	mAniCnt %= ANICNT;
 	if (mAniCnt < ANICNT / 2)
@@ -58,6 +67,10 @@ void CPlayer::Render() {
 
 //36
 void CPlayer::Collision(CRectangle *ri, CRectangle *ry) {
+	if (stop > 0)
+	{
+		return;
+	}
 	if (ry->mTag == EBLOCK) {
 		int mx, my;
 		if (CRectangle::Collision(ry, &mx, &my)) {
@@ -73,4 +86,15 @@ void CPlayer::Collision(CRectangle *ri, CRectangle *ry) {
 			}
 		}
 	}
+	//親のCollisionメソッドを呼び出す
+	if (CRectangle::Collision(*ry)) {
+		switch (ry->mTag) {
+		case EENEMYB:
+			//敵に当たると５秒間停止
+			stop = 300;
+			break;
+		}
+	}
 }
+
+

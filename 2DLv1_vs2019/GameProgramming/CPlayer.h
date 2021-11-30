@@ -12,7 +12,7 @@ public:
 	void Update();
 	void Render();
 	int mAniCnt;//アニメーション用カウンタ
-
+	int stop;
 
 	//36
 	void Collision(CRectangle *i, CRectangle *y);
