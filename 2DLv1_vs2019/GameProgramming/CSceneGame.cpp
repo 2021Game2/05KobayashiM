@@ -9,6 +9,7 @@ int Score = 0;
 void CSceneGame::Init() {
 	//シーンの設定
 	mScene = EGAME;
+	ks = 0;
 
 	//クラスのメンバ変数への代入
 //37
@@ -128,6 +129,34 @@ void CSceneGame::Init() {
 }
 
 void CSceneGame::Update() {
+	ks++;
+	if (ks % 160 == 0) {
+		int x = rand() % 550 - 275;
+		CEnemy* Enemy = new CEnemy();//栗
+		Enemy->x = x;
+		Enemy->y = 350;
+		//右へ移動
+		Enemy->mFx = 0;
+		Enemy->mFy = -1;
+	}
+	if (ks % 140 == 0) {
+		int y = rand() % 550 - 275;
+		CEnemys* Enemys = new CEnemys();//ウニ
+		Enemys->x = y;
+		Enemys->y = 350;
+		//右へ移動
+		Enemys->mFx = 0;
+		Enemys->mFy = -1;
+	}
+	if (ks % 180 == 0) {
+		int z = rand() % 550 - 275;
+		CEnemyb* Enemyb = new CEnemyb();//爆弾
+		Enemyb->x = z;
+		Enemyb->y = 350;
+		//右へ移動
+		Enemyb->mFx = 0;
+		Enemyb->mFy = -1;
+	}
 	/*
 	配列の要素分繰り返す
 	配列名.size()

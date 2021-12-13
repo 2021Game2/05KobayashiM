@@ -5,6 +5,7 @@
 
 class CPlayer : public CRectangle {
 public:
+	bool mGameOver;
 	int mFx, mFy;
 	//37
 	int FireCount;

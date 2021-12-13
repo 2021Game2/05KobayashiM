@@ -10,6 +10,7 @@ CPlayer::CPlayer()
 , FireCount(0)
 , mAniCnt(0)
 ,stop(0)
+,mGameOver(false)
 {
 	mTag = EPLAYER;
 }

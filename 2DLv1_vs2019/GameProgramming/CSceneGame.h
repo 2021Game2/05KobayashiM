@@ -37,6 +37,7 @@ public:
 	EScene GetNextScene();
 	//デストラクタの宣言
 	~CSceneGame();
+	int ks;
 
 };
 
