@@ -1,6 +1,7 @@
 #include "CSceneManager.h"
 #include "CSceneGame.h"
 #include "CSceneTitle.h"
+#include "GameResult.h"
 
 //コンストラクタ
 CSceneManager::CSceneManager()
@@ -39,6 +40,10 @@ void CSceneManager::Update() {
 			break;
 		case CScene::ETITLE:
 			mpScene = new CSceneTitle();
+			mpScene->Init();
+			break;
+		case CScene::EGAMEOVER:
+			mpScene = new GameResult();
 			mpScene->Init();
 			break;
 		}

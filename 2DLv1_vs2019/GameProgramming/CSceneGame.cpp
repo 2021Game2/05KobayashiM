@@ -217,6 +217,7 @@ void CSceneGame::Update() {
 
 	sprintf(buf, "%d", Score);
 	CText::DrawString(buf, -160, 250, 16, 16);
+	mScene = EGAMEOVER;
 }
 
 

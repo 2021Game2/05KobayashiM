@@ -97,10 +97,10 @@
     <ClCompile Include="CSceneTitle.cpp" />
     <ClCompile Include="CText.cpp" />
     <ClCompile Include="CTexture.cpp" />
+    <ClCompile Include="GameResult.cpp" />
     <ClCompile Include="GameTitle.cpp" />
     <ClCompile Include="Update.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ソース.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CEnemy.h" />
@@ -117,6 +117,7 @@
     <ClInclude Include="CSceneTitle.h" />
     <ClInclude Include="CText.h" />
     <ClInclude Include="CTexture.h" />
+    <ClInclude Include="GameResult.h" />
     <ClInclude Include="GameTitle.h" />
     <ClInclude Include="Update.h" />
   </ItemGroup>
